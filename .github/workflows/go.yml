@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Get dependencies
-      run: go get -d -v ./...
+      run: GOPATH=/home/runner/work/hentai_bot/ go get -d -v ./...
 
     - name: Test
-      run: go test ./... -cover
+      run: GOPATH=/home/runner/work/hentai_bot/ go test ./... -cover
