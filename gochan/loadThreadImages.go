@@ -1,22 +1,5 @@
 package gochan
 
-import (
-  "strings"
-
-  "hentai_bot/dom"
-)
-
-func getImageUrl(tag dom.Tag) (string, bool) {
-  rawUrl, ok := tag.Attributes["href"]
-  if !ok {
-    return "", false
-  }
-
-  url := strings.ReplaceAll(rawUrl, "//", "http://")
-
-  return url, true
-}
-
 func LoadThreadImages(board, threadID string) (Thread, error) {
   result := Thread{
     Posts: make([]Post, 0),
