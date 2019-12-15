@@ -19,9 +19,15 @@ func commandHandler(session *discordgo.Session, message *discordgo.MessageCreate
     return
   }
 
-  commandArgs[0] = commandArgs[0][len(conf.Prefix):]
+  command := commandArgs[0][len(conf.Prefix):]
 
-  if commandArgs[0] == "hentai" {
+  if commandArgs[0] == "!help" {
+    handleHelp(session, channelID, commandArgs)
+
+    return
+  }
+
+  if command == "hentai" {
     handleHentai(session, channelID, commandArgs)
 
     return
