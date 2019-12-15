@@ -45,12 +45,12 @@ func TestGetImageUrl(t *testing.T) {
     outputString, outputBool := getImageUrl(inTag)
 
     if outputBool != resBool {
-      t.Errorf("")
+      t.Errorf("Did not return the correct bool value, returned '%v', expected '%v' \n", outputBool, resBool)
       continue
     }
 
     if outputString != resString {
-      t.Errorf("")
+      t.Errorf("Did not return the correct url, returned '%s', expected '%s' \n", outputString, resString)
       continue
     }
   }

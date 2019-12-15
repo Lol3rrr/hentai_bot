@@ -7,17 +7,13 @@ func LoadBoardPage(board string, page int) ([]Thread, error) {
   if err != nil {
     return result, err
   }
-  threads := boardPage.SearchAttribute("class", "thread")
-  for _, thread := range threads {
-    rawID := thread.Attributes["id"]
-    id := rawID[1:]
 
+  threadIDs := getPageThreads(boardPage)
+  for _, id := range threadIDs {
     thread, err := LoadThreadImages(board, id)
-    if err != nil {
-      continue
+    if err == nil {
+      result = append(result, thread)
     }
-
-    result = append(result, thread)
   }
 
   return result, nil
