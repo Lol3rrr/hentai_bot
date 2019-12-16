@@ -3,7 +3,7 @@ package gochan
 import (
   "testing"
 
-  "hentai_bot/dom"
+  "github.com/Lol3rrr/dom"
 )
 
 func TestGetImageUrl(t *testing.T) {

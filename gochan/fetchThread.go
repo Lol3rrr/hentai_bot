@@ -1,7 +1,7 @@
 package gochan
 
 import (
-  "hentai_bot/dom"
+  "github.com/Lol3rrr/dom"
 )
 
 func FetchThread(board, threadID string) (dom.TagList, error) {

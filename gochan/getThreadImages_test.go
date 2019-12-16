@@ -4,7 +4,7 @@ import (
   "reflect"
   "testing"
 
-  "hentai_bot/dom"
+  "github.com/Lol3rrr/dom"
 )
 
 func TestGetThreadImages(t *testing.T) {

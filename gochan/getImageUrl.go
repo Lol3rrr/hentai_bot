@@ -3,7 +3,7 @@ package gochan
 import (
   "strings"
 
-  "hentai_bot/dom"
+  "github.com/Lol3rrr/dom"
 )
 
 func getImageUrl(tag dom.Tag) (string, bool) {

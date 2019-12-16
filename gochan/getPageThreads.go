@@ -1,7 +1,7 @@
 package gochan
 
 import (
-  "hentai_bot/dom"
+  "github.com/Lol3rrr/dom"
 )
 
 func getPageThreads(boardPage dom.TagList) []string {
