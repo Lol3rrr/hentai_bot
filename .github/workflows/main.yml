@@ -1,7 +1,8 @@
-name: Publish Docker
+name: Build Docker Image
 on: [push]
 jobs:
-  build:
+  build_linux:
+    name: Building Linux Image
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -18,3 +19,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         # Use buildargs when you want to pass a list of environment variables as build-args
         buildargs: "buildType"
+        # Custom Tags
+        semver: latest
