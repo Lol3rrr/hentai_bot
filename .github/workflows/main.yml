@@ -1,7 +1,7 @@
 name: Build Docker Image
 on: [push]
 jobs:
-  build:
+  build_linux:
     name: Building
     runs-on: ubuntu-latest
     steps:
@@ -16,3 +16,19 @@ jobs:
 
       - name: Publish
         run: docker push lol3r/hentai_bot:latest
+
+  build_rpi:
+    name: Building Raspberry Pi Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull
+        uses: actions/checkout@master
+
+      - name: Build Docker image
+        run: buildType=rpi docker build -t lol3r/hentai_bot:latest-rpi .
+
+      - name: Login to Repo
+        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Publish
+        run: docker push lol3r/hentai_bot:latest-rpi
