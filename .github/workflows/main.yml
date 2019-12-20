@@ -1,0 +1,20 @@
+name: Publish Docker
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Docker Semver
+      uses: MirzaMerdovic/docker-semver-github-action@1.0.0
+      env:
+        buildType: linux
+      with:
+        # The name of the image you would like to push
+        name: lol3r/hentai_bot
+        # The login username for the registry
+        username: ${{ secrets.DOCKER_USERNAME }}
+        # The login password for the registry
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        # Use buildargs when you want to pass a list of environment variables as build-args
+        buildargs: "buildType"
