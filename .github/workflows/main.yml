@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build Docker image
-        run: buildType=linux docker build -t lol3r/hentai_bot:latest .
+        run: docker build --build-arg buildType=linux -t lol3r/hentai_bot:latest .
 
       - name: Login to Repo
         run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}

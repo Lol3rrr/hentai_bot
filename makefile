@@ -14,4 +14,4 @@ build_rpi:
 	go build -a -installsuffix cgo -o app .
 
 build_docker_rpi:
-	buildType=rpi docker build -t lol3r/hentai_bot:latest-rpi .
+	docker build --build-arg buildType=rpi -t lol3r/hentai_bot:latest-rpi .

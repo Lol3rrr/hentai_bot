@@ -1,6 +1,6 @@
 FROM golang:1.13 AS build
 
-ENV buildType linux
+ARG buildType=linux
 
 WORKDIR /go/src/hentai_bot
 COPY . .
