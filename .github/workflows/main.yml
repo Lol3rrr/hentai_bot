@@ -18,3 +18,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         # Use buildargs when you want to pass a list of environment variables as build-args
         buildargs: "buildType"
+        workdir: "/home/runner/work/hentai_bot/hentai_bot"
