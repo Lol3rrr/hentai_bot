@@ -17,6 +17,7 @@ func main() {
   fmt.Printf("Loading Config... \n")
   botConfig, err := config.Load(configFile)
   if general.CheckError(err, "Main") {
+    fmt.Printf("Error loading Config: '%v' \n", err)
     return
   }
 
