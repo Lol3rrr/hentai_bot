@@ -12,7 +12,7 @@ import (
 func main() {
   fmt.Printf("Starting... \n")
 
-  configFile := "config.json"
+  configFile := "./config.json"
 
   fmt.Printf("Loading Config... \n")
   botConfig, err := config.Load(configFile)
