@@ -13,5 +13,5 @@ build_windows:
 build_rpi:
 	go build -a -installsuffix cgo -o app .
 
-build_docker:
-	buildType=linux docker build -t lol3r/hentai_bot:latest .
+build_docker_rpi:
+	buildType=rpi docker build -t lol3r/hentai_bot:latest .
