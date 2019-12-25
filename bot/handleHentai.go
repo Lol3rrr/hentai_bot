@@ -8,6 +8,7 @@ func handleHentai(session *discordgo.Session, channelID string, parts []string) 
   post, worked := hentaiBoard.SelectRandomPost()
   if !worked {
     session.ChannelMessageSend(channelID, "Could not select a random post")
+    return
   }
 
   message := post.Image
